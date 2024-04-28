@@ -38,6 +38,14 @@
                 <span class="invalid-feedback">@error('cover_image') {{$message}} @enderror</span>
             </div>
 
+            <div class="mb-3">
+                <label for="type-id" class="form-label">Tipologia</label>
+                <select name="type_id" class="form-control"id="type_id">
+                    @foreach ($types as $type)
+                    <option @selected( old('type_id', optional($project->type)->id) == $type->id) value="{{$type->id}}">{{$type->name}}</option>
+                    @endforeach
+                </select>
+            </div>
 
             <div class="mb-3">
                <input type="submit" class="btn btn-secondary" value="Modifica">
