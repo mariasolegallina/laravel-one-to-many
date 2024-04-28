@@ -34,6 +34,15 @@
             </div>
 
             <div class="mb-3">
+                <label for="type-id" class="form-label">Tipologia</label>
+                <select name="type_id" id="type_id">
+                    @foreach ($types as $type)
+                    <option value="{{$type->id}}">{{$type->name}}</option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="mb-3">
                <input type="submit" class="btn btn-primary" value="Aggiungi">
             </div>
         </form>

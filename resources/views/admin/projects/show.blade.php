@@ -6,11 +6,11 @@
 
         <h2 class="fs-4 text-secondary my-4">{{$project->title}}</h2>
 
-       {{-- category --}}
-        @if($project->category)
+        {{-- type --}}
+        @if($project->type)
         <p>
           <strong>
-          {{ $project->category->name }}
+          {{ $project->type->name }}
           </strong>
         </p>
         @endif
@@ -20,6 +20,7 @@
         <img src="{{ asset('storage/' . $project->cover_image) }}" alt="immagine di copertina">
         @endif
 
+        {{-- description --}}
         <p>{{$project->description}}</p>
 
         <div class="my-4">
@@ -32,7 +33,7 @@
                 Elimina
             </button>
                       
-            <!-- Modal -->
+            <!-- delete modal -->
             <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">

@@ -7,6 +7,8 @@ use App\Http\Requests\StoreTypeRequest;
 use App\Http\Requests\UpdateTypeRequest;
 use App\Models\Type;
 
+use function PHPSTORM_META\type;
+
 class TypeController extends Controller
 {
     /**
@@ -40,7 +42,9 @@ class TypeController extends Controller
      */
     public function show(Type $type)
     {
-        //
+        dd($type->projects);
+
+        return view('admin.type.show', compact('type'));
     }
 
     /**
