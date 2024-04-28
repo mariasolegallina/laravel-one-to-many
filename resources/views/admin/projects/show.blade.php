@@ -6,6 +6,16 @@
 
         <h2 class="fs-4 text-secondary my-4">{{$project->title}}</h2>
 
+       {{-- category --}}
+        @if($project->category)
+        <p>
+          <strong>
+          {{ $project->category->name }}
+          </strong>
+        </p>
+        @endif
+
+        {{-- cover-image --}}
         @if ($project->cover_image)
         <img src="{{ asset('storage/' . $project->cover_image) }}" alt="immagine di copertina">
         @endif
@@ -13,8 +23,11 @@
         <p>{{$project->description}}</p>
 
         <div class="my-4">
+
+            {{-- edit --}}
             <a class="btn btn-secondary" href="{{route('admin.projects.edit', $project)}}">Modifica</a>
 
+            {{-- delete --}}
             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
                 Elimina
             </button>
